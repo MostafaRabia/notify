@@ -17,7 +17,7 @@
 			];
 			var valueToUse = values[Math.floor(Math.random() * values.length)];
 			Notification.requestPermission();
-			new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png'});
+			new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png',dir:'rtl',vibrate: [200],renotify:true});
 			setInterval(function(){
 				var now = new Date()
 				var minutes = now.getMinutes();
