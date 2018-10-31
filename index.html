@@ -17,13 +17,13 @@
 			];
 			var valueToUse = values[Math.floor(Math.random() * values.length)];
 			Notification.requestPermission();
-			new Notification(valueToUse);
+			new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png'});
 			setInterval(function(){
 				var now = new Date()
 				var minutes = now.getMinutes();
 				console.log(minutes);
 				if (minutes%30==0){
-					new Notification(valueToUse);
+					new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png'});
 				}
 			},60000);
 		</script>
