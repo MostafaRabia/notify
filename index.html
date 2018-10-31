@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Notifications</title>
+		<script>
+			Notification.requestPermission();;
+			new Notification("Hi there!");
+			setInterval(function(){
+				var now = new Date()
+				var minutes = now.getMinutes();
+				console.log(minutes);
+				if (minutes%30==0){
+					new Notification("Hi there!");
+				}
+			},1000);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
