@@ -4,13 +4,6 @@
 		<meta charset="UTF-8">
 		<script>
 			navigator.serviceWorker.register('sw.js');
-			Notification.requestPermission(function(result) {
-			  if (result === 'granted') {
-				navigator.serviceWorker.ready.then(function(registration) {
-				  registration.showNotification('Notification with ServiceWorker');
-				});
-			  }
-			});
 			var values = [
 				'كُلُّ نَفْسٍ ذَائِقَةُ الْمَوْتِ ۗ وَإِنَّمَا تُوَفَّوْنَ أُجُورَكُمْ يَوْمَ الْقِيَامَةِ ۖ فَمَن زُحْزِحَ عَنِ النَّارِ وَأُدْخِلَ الْجَنَّةَ فَقَدْ فَازَ ۗ وَمَا الْحَيَاةُ الدُّنْيَا إِلَّا مَتَاعُ الْغُرُورِ',
 				'اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ وأَتْبِعِ السَّيِّئَةَ الْحسنةَ تَمْحُهَا، وخَالقِ النَّاسَ بخُلُقٍ حَسَنٍ',
