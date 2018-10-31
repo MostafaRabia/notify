@@ -17,14 +17,22 @@
 				'وَمَا هَذِهِ الْحَيَاةُ الدُّنْيَا إِلَّا لَهْوٌ وَلَعِبٌ وَإِنَّ الدَّارَ الْآخِرَةَ لَهِيَ الْحَيَوَانُ لَوْ كَانُوا يَعْلَمُونَ',
 			];
 			var valueToUse = values[Math.floor(Math.random() * values.length)];
-			Notification.requestPermission();
-			new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png',dir:'rtl',vibrate: [200],renotify:true});
+			Notification.requestPermission(function(result) {
+			  if (result === 'granted') {
+				navigator.serviceWorker.ready.then(function(registration) {
+				  registration.showNotification(valueToUse);
+				});
+			  }
+			});
 			setInterval(function(){
 				var now = new Date()
 				var minutes = now.getMinutes();
 				console.log(minutes);
 				if (minutes%30==0){
 					new Notification(valueToUse,{body: 'Azkar',icon:'praying-icon.png'});
+					navigator.serviceWorker.ready.then(function(registration) {
+						registration.showNotification(valueToUse,{body: 'Azkar',icon:'praying-icon.png',dir:'rtl',vibrate: [200]});
+					});
 				}
 			},60000);
 		</script>
